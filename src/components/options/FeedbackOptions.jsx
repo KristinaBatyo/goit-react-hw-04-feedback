@@ -2,7 +2,7 @@
 import { ButtonStyled, ButtonDiv } from "./FeedbackOptions.styled";
 import PropTypes from 'prop-types';
 
-export const ButtonList = ({ options, onLeaveFeedback }) => {
+export const ButtonList = ({ options, onLeaveFeedback}) => {
     return (
         <ButtonDiv>
             {options.map(option => (
@@ -10,9 +10,7 @@ export const ButtonList = ({ options, onLeaveFeedback }) => {
                     key={option}
                     type="button"
                     name={option}
-                    onClick={onLeaveFeedback}
-                >
-                    {option}
+                    onClick={() => onLeaveFeedback(option)}>                    {option}
                 </ButtonStyled>
             ))}
         </ButtonDiv>
@@ -23,3 +21,4 @@ ButtonList.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string.isRequired),
     onLeaveFeedback: PropTypes.func.isRequired,
 };
+
