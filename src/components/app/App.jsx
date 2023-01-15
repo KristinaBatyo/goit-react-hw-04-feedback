@@ -47,7 +47,7 @@ const options = ['good', 'bad', 'neutral'];
     </Section>
     <Section title={'Statistics'}>
     {totalFeedback > 0 && <Statistics good={good} neutral={neutral} bad={bad} total={totalFeedback} positivePercentage={countPositiveFeedbackPercentage} />}
-    <Notification message="There is no feedback"></Notification>
+    {totalFeedback < 1 && <Notification message="There is no feedback"></Notification>}
     </Section>
     </AppContainer>
 
