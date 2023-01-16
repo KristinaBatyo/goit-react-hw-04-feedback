@@ -11,7 +11,7 @@ const [good, setGood] = useState(0);
 const [neutral, setNeutral] = useState(0);
 const [bad, setBad] = useState(0);
 
-const options = ['good', 'bad', 'neutral'];
+
 
     const handleIncrement = (option) => {
       switch (option) {
@@ -43,7 +43,7 @@ const options = ['good', 'bad', 'neutral'];
 
     <AppContainer>
     <Section title={'Please leave your feedback'}>
-    <ButtonList options={options} onLeaveFeedback={handleIncrement}/>
+    <ButtonList options={Object.keys({ good, neutral, bad })} onLeaveFeedback={handleIncrement}/>
     </Section>
     <Section title={'Statistics'}>
     {totalFeedback > 0 && <Statistics good={good} neutral={neutral} bad={bad} total={totalFeedback} positivePercentage={countPositiveFeedbackPercentage} />}
